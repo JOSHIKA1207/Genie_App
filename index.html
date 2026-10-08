@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GENIE - All in One Services</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🧞 GENIE
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#reminders">My Work</a>
+        </nav>
+
+        <button class="location-btn" onclick="getLocation()">
+            📍 Location
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Everything You Need,
+                <span>One GENIE Away</span>
+            </h1>
+
+            <p>
+                Find services, book professionals, manage your work
+                and set reminders in one place.
+            </p>
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a service..."
+    >
+
+    <button id="searchButton">
+        🔍 Search
+    </button>
+
+</div>
+
+<p id="searchMessage"></p>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section">
+
+        <h2>Explore Categories</h2>
+
+        <p class="section-subtitle">
+            Choose what you need
+        </p>
+
+
+        <div class="categories">
+
+            <div class="category" onclick="selectCategory('Cleaning')">
+                <div class="category-icon">🧹</div>
+                <h3>Cleaning</h3>
+                <p>Home • Office • Others</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Fixing')">
+                <div class="category-icon">🔧</div>
+                <h3>Fixing & Repairs</h3>
+                <p>Electric • Plumber • Carpenter</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Vehicle')">
+                <div class="category-icon">🚗</div>
+                <h3>Vehicle Services</h3>
+                <p>Car • Bike • Mechanic</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Electronics')">
+                <div class="category-icon">💻</div>
+                <h3>E-Products</h3>
+                <p>Laptop • Mobile • TV</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Delivery')">
+                <div class="category-icon">📦</div>
+                <h3>Pickup & Delivery</h3>
+                <p>Documents • Parcels</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Shopping')">
+                <div class="category-icon">🛒</div>
+                <h3>Shopping</h3>
+                <p>Groceries • Items</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Medicine')">
+                <div class="category-icon">💊</div>
+                <h3>Medicine</h3>
+                <p>Pharmacy • Health Items</p>
+            </div>
+
+
+            <div class="category" onclick="selectCategory('Food')">
+                <div class="category-icon">🍕</div>
+                <h3>Food</h3>
+                <p>Restaurants • Delivery</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section class="section services-section" id="services">
+
+        <h2>Popular Services</h2>
+
+        <p class="section-subtitle">
+            Services available near you
+        </p>
+
+
+        <div class="service-grid" id="serviceGrid">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card"
+                 data-category="Cleaning"
+                 data-name="Home Deep Cleaning">
+
+                <div class="service-image">
+                    🧹
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Cleaning
+                    </span>
+
+                    <h3>Home Deep Cleaning</h3>
+
+                    <div class="rating">
+                        ⭐ 4.8
+                    </div>
+
+                    <p>
+                        Complete home cleaning by trained professionals.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Home Deep Cleaning')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card"
+                 data-category="Fixing"
+                 data-name="Electrician">
+
+                <div class="service-image">
+                    ⚡
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Fixing
+                    </span>
+
+                    <h3>Electrician</h3>
+
+                    <div class="rating">
+                        ⭐ 4.7
+                    </div>
+
+                    <p>
+                        Electrical repair and installation services.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Electrician')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card"
+                 data-category="Vehicle"
+                 data-name="Bike Mechanic">
+
+                <div class="service-image">
+                    🏍️
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Vehicle
+                    </span>
+
+                    <h3>Bike Mechanic</h3>
+
+                    <div class="rating">
+                        ⭐ 4.6
+                    </div>
+
+                    <p>
+                        Bike servicing and emergency repairs.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Bike Mechanic')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card"
+                 data-category="Electronics"
+                 data-name="Laptop Service">
+
+                <div class="service-image">
+                    💻
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        E-Products
+                    </span>
+
+                    <h3>Laptop Service</h3>
+
+                    <div class="rating">
+                        ⭐ 4.9
+                    </div>
+
+                    <p>
+                        Laptop repair, cleaning and software support.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Laptop Service')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card"
+                 data-category="Food"
+                 data-name="Pizza Restaurant">
+
+                <div class="service-image">
+                    🍕
+
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Food
+                    </span>
+
+                    <h3>Pizza Restaurant</h3>
+
+                    <div class="rating">
+                        ⭐ 4.5
+                    </div>
+
+                    <p>
+                        Pizza, burgers and fast food delivery.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Pizza Restaurant')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="service-card"
+                 data-category="Shopping"
+                 data-name="Grocery Store">
+
+                <div class="service-image">
+                    🛒
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Shopping
+                    </span>
+
+                    <h3>Grocery Store</h3>
+
+                    <div class="rating">
+                        ⭐ 4.7
+                    </div>
+
+                    <p>
+                        Daily groceries and household items.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Grocery Store')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 7 -->
+
+            <div class="service-card"
+                 data-category="Medicine"
+                 data-name="Nearby Pharmacy">
+
+                <div class="service-image">
+                    💊
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Medicine
+                    </span>
+
+                    <h3>Nearby Pharmacy</h3>
+
+                    <div class="rating">
+                        ⭐ 4.8
+                    </div>
+
+                    <p>
+                        Medicines and healthcare products.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Nearby Pharmacy')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 8 -->
+
+            <div class="service-card"
+                 data-category="Delivery"
+                 data-name="Quick Pickup">
+
+                <div class="service-image">
+                    📦
+                </div>
+
+                <div class="service-content">
+
+                    <span class="service-category">
+                        Delivery
+                    </span>
+
+                    <h3>Quick Pickup</h3>
+
+                    <div class="rating">
+                        ⭐ 4.6
+                    </div>
+
+                    <p>
+                        Fast local pickup and delivery service.
+                    </p>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewService('Quick Pickup')">
+                        View Service
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MY WORK ================= -->
+
+    <section class="section work-section" id="reminders">
+
+        <h2>📅 My Work & Reminders</h2>
+
+        <p class="section-subtitle">
+            Add your work, appointments and important tasks.
+        </p>
+
+
+        <div class="work-container">
+
+            <!-- ADD WORK FORM -->
+
+            <div class="work-form">
+
+                <h3>Add New Work</h3>
+
+                <label>
+                    Work / Task
+                </label>
+
+                <input
+                    type="text"
+                    id="workTitle"
+                    placeholder="Example: Service my bike"
+                >
+
+
+                <label>
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="workDate"
+                >
+
+
+                <label>
+                    Time
+                </label>
+
+                <input
+                    type="time"
+                    id="workTime"
+                >
+
+
+                <label>
+                    Reminder
+                </label>
+
+                <select id="reminderTime">
+
+                    <option value="0">
+                        At the scheduled time
+                    </option>
+
+                    <option value="5">
+                        5 minutes before
+                    </option>
+
+                    <option value="15">
+                        15 minutes before
+                    </option>
+
+                    <option value="30">
+                        30 minutes before
+                    </option>
+
+                    <option value="60">
+                        1 hour before
+                    </option>
+
+                    <option value="1440">
+                        1 day before
+                    </option>
+
+                </select>
+
+
+                <button
+                    class="add-work-btn"
+                    onclick="addWork()">
+
+                    + Add Work
+
+                </button>
+
+            </div>
+
+
+            <!-- WORK LIST -->
+
+            <div class="work-list">
+
+                <h3>My Tasks</h3>
+
+                <div id="workList">
+
+                    <p class="empty-work">
+                        No work added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICE MODAL ================= -->
+
+    <div
+        class="modal"
+        id="serviceModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeService()">
+
+                ×
+
+            </button>
+
+
+            <div
+                class="modal-image"
+                id="modalImage">
+
+                🧞
+
+            </div>
+
+
+            <div class="modal-details">
+
+                <span
+                    class="service-category"
+                    id="modalCategory">
+                </span>
+
+
+                <h2 id="modalTitle">
+                    Service
+                </h2>
+
+
+                <div
+                    class="modal-rating"
+                    id="modalRating">
+
+                </div>
+
+
+                <p id="modalDescription">
+                </p>
+
+
+                <div class="detail-row">
+
+                    📍
+
+                    <span id="modalLocation">
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    💰
+
+                    <span id="modalPrice">
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    🕐
+
+                    <span id="modalAvailability">
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    About this service
+                </h3>
+
+                <p id="modalAbout">
+                </p>
+
+
+                <h3>
+                    Rate this service
+                </h3>
+
+
+                <div class="rating-buttons">
+
+                    <button onclick="rateService(1)">⭐</button>
+                    <button onclick="rateService(2)">⭐</button>
+                    <button onclick="rateService(3)">⭐</button>
+                    <button onclick="rateService(4)">⭐</button>
+                    <button onclick="rateService(5)">⭐</button>
+
+                </div>
+
+
+                <p
+                    id="ratingMessage"
+                    class="rating-message">
+                </p>
+
+
+                <button
+                    class="book-btn"
+                    onclick="bookService()">
+
+                    Book This Service
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>🧞 GENIE</h2>
+
+        <p>
+            One platform for everything you need.
+        </p>
+
+        <p>
+            © 2026 GENIE
+        </p>
+
+    </footer>
+
+
+    <!-- IMPORTANT:
+         Keep JavaScript at the end of body -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
